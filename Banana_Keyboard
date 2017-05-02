@@ -1,0 +1,23 @@
+/*
+ * Makey Makey Makey - Inspired by the Makey Makey by FireBugs on 12th May 2016
+ * Using code parts from: https://www.arduino.cc/en/Tutorial/Arrays
+ */
+#include "pitches.h"
+const int banana_count = 5;
+int bananas[] = {A1,A2,A3,A4,A5};
+int tones[] = {NOTE_C6,NOTE_D6,NOTE_E6,NOTE_F6,NOTE_G6};
+int speaker = 9;
+void setup() {
+for (int thisPin = 0; thisPin < banana_count; thisPin++) {
+    pinMode(bananas[thisPin], INPUT);
+}
+pinMode(speaker,OUTPUT);
+}
+void loop(){
+for (int thisPin = 0; thisPin < banana_count; thisPin++) {
+if(digitalRead(bananas[thisPin]) == LOW){
+ tone(speaker,tones[thisPin],100);
+ delay(50);
+}
+}
+}
