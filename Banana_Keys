@@ -1,0 +1,28 @@
+/*
+ * banana_keys - Inspired by the Makey Makey by Firebugs 12th May 2016
+ * This is a modification of the Banana_Keyboard sketch written for the purpose of learning
+ * This sketch is in the public domain
+ */
+int bananas[] = {A1,A2,A3,A4,A5}; // array to hold the banana pins
+int tones[] = {1047, 1174, 1319, 1397, 1568}; // array to hold the tones
+int buzzer = 9; // the buzzer pin
+
+void setup() {
+pinMode(buzzer,OUTPUT); // set buzzer pin to OUTPUT
+}
+void loop(){
+// if any of the banana pins have been touched (are LOW) play the buzzer 
+if(digitalRead(bananas[0]) == LOW){
+ tone(buzzer,tones[0],100);
+ delay(50);
+}
+if(digitalRead(bananas[1]) == LOW){
+ tone(buzzer,tones[1],100);
+ delay(50);
+}
+if(digitalRead(bananas[2]) == LOW){
+ tone(buzzer,tones[2],100);
+ delay(50);
+}
+// create 2 more IF statements here for the other 2 bananas
+}
